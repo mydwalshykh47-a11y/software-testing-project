@@ -1,0 +1,7 @@
+{
+  "searchTerms": {
+    "valid": "hammer",
+    "invalid": "xyz123abc"
+  },
+  "productKeywords": ["hammer", "pliers", "screwdriver"]
+}

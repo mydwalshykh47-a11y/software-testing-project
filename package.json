@@ -1,0 +1,20 @@
+{
+  "name": "project2-cypress-advanced",
+  "version": "1.0.0",
+  "description": "Cypress Advanced Testing - POM + BDD Cucumber + CI/CD",
+  "scripts": {
+    "test": "cypress run",
+    "test:headed": "cypress open",
+    "test:cucumber": "cypress run --spec 'cypress/e2e/features/**/*.feature'",
+    "test:e2e": "cypress run --spec 'cypress/e2e/*.cy.js'"
+  },
+  "devDependencies": {
+    "cypress": "^13.6.0",
+    "@badeball/cypress-cucumber-preprocessor": "^20.0.0",
+    "@bahmutov/cypress-esbuild-preprocessor": "^2.2.0"
+  },
+  "cypress-cucumber-preprocessor": {
+    "nonGlobalStepDefinitions": false,
+    "stepDefinitions": "cypress/e2e/step_definitions/**/*.js"
+  }
+}
