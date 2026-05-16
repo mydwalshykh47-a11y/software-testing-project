@@ -5,13 +5,13 @@ on:
     branches:
       - main
       - develop
-
   pull_request:
     branches:
       - main
 
 jobs:
   cypress-run:
+    name: Run Cypress Tests
     runs-on: ubuntu-latest
 
     timeout-minutes: 30
@@ -41,28 +41,24 @@ jobs:
         uses: cypress-io/github-action@v6
         with:
           browser: ${{ matrix.browser }}
-          headed: false
-          wait-on: 'https://practicesoftwaretesting.com'
-          wait-on-timeout: 120
           spec: |
             cypress/e2e/project_tests.cy.js
             cypress/e2e/features/**/*.feature
-
         env:
           CYPRESS_BASE_URL: https://practicesoftwaretesting.com
 
-      - name: Upload Screenshots
+      - name: Upload Screenshots (on failure)
         uses: actions/upload-artifact@v4
         if: failure()
         with:
-          name: screenshots-${{ matrix.browser }}
+          name: cypress-screenshots-${{ matrix.browser }}
           path: cypress/screenshots
           retention-days: 7
 
-      - name: Upload Videos
+      - name: Upload Videos (always)
         uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: videos-${{ matrix.browser }}
+          name: cypress-videos-${{ matrix.browser }}
           path: cypress/videos
           retention-days: 7
