@@ -1,5 +1,4 @@
-# cypress/e2e/features/products.feature
-# BDD Cucumber - سيناريوهات المنتجات والبحث
+
 
 Feature: Product Search and Navigation
   As a visitor

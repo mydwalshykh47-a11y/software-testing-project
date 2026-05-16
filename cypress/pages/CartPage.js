@@ -1,5 +1,4 @@
-// cypress/pages/CartPage.js
-// Page Object Model - صفحة السلة
+
 
 class CartPage {
   // Selectors

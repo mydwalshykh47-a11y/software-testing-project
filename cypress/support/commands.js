@@ -1,9 +1,4 @@
-// cypress/support/commands.js
-// Custom Commands - المشروع الثاني
 
-// ============================================================
-// Navigation Commands
-// ============================================================
 
 Cypress.Commands.add('visitHomePage', () => {
   cy.visit('/', { failOnStatusCode: false });
@@ -15,9 +10,7 @@ Cypress.Commands.add('goToLoginPage', () => {
     .click();
 });
 
-// ============================================================
-// Authentication Commands
-// ============================================================
+
 
 Cypress.Commands.add('performLogin', (email, password) => {
   if (!email || !password) throw new Error('Email or password is undefined!');
@@ -53,9 +46,7 @@ Cypress.Commands.add('logout', () => {
   cy.contains('Sign out').click();
 });
 
-// ============================================================
-// Product Commands
-// ============================================================
+
 
 Cypress.Commands.add('searchProduct', (query) => {
   if (!query) throw new Error('Search query is undefined!');
@@ -80,9 +71,7 @@ Cypress.Commands.add('viewCart', () => {
   cy.get('[data-test="nav-cart"]', { timeout: 10000 }).should('be.visible').click();
 });
 
-// ============================================================
-// Flow Commands (combined steps)
-// ============================================================
+
 
 Cypress.Commands.add('addItemToCartFlow', () => {
   cy.loginViaApi();
@@ -91,9 +80,7 @@ Cypress.Commands.add('addItemToCartFlow', () => {
   cy.addItemToCart();
 });
 
-// ============================================================
-// Custom Assertions
-// ============================================================
+
 
 Cypress.Commands.add('assertPageTitle', (title) => {
   cy.title().should('include', title);

@@ -1,5 +1,4 @@
-// cypress/e2e/step_definitions/common.steps.js
-// الخطوات المشتركة بين كل الـ features
+
 
 const { Given, When, Then } = require('@badeball/cypress-cucumber-preprocessor');
 const homePage    = require('../../pages/HomePage');

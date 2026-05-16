@@ -1,5 +1,4 @@
-# cypress/e2e/features/cart.feature
-# BDD Cucumber - سيناريوهات السلة
+
 
 Feature: Shopping Cart
   As a logged-in user

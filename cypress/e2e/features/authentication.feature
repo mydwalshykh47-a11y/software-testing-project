@@ -1,5 +1,3 @@
-# cypress/e2e/features/authentication.feature
-# BDD Cucumber - سيناريوهات تسجيل الدخول
 
 Feature: User Authentication
   As a user of Practice Software Testing
